@@ -29,12 +29,12 @@ jobs:
           export ANDROID_NDK=~/android-env/android-ndk-r14b
           export ANDROID_NDK_ROOT=$ANDROID_NDK
           export NDK_ROOT=$ANDROID_NDK
+          ./init-android-openssl.sh
           ./init-android.sh
           cd extra
           ./init-extra.sh
           cd ..
           cd android/contrib
-          ./compile-libsoxr.sh all
           ./compile-openssl.sh all
           ./compile-ffmpeg.sh all
           cd ..
