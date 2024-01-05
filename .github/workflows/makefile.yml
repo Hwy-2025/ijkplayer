@@ -34,8 +34,6 @@ jobs:
           ./init-extra.sh
           cd ..
           cd android/contrib
-          ./compile-openssl.sh all
-          ./compile-libsoxr.sh all
           ./compile-ffmpeg.sh all
           cd ..
           ./compile-ijk.sh all
