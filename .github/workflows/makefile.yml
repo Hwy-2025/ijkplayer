@@ -31,10 +31,12 @@ jobs:
           export NDK_ROOT=$ANDROID_NDK
           ./init-android.sh
           ./extra/init-extra.sh
-          ./android/contrib/compile-openssl.sh
-          ./android/contrib/compile-libsoxr.sh
-          ./android/contrib/compile-ffmpeg.sh
-          ./android/compile-ijk.sh
+          cd android/contrib
+          ./compile-openssl.sh
+          ./compile-libsoxr.sh
+          ./compile-ffmpeg.sh
+          cd ..
+          ./compile-ijk.sh
 
     - name: Upload SDK
       uses: actions/upload-artifact@v2
