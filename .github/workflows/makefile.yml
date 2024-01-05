@@ -37,9 +37,15 @@ jobs:
           ./compile-ffmpeg.sh all
           cd ..
           ./compile-ijk.sh all
+          mkdir output
+          cp -R ijkplayer/ijkplayer-arm64/src/main/libs output/ 2>/dev/null || :
+          cp -R ijkplayer/ijkplayer-armv5/src/main/libs output/ 2>/dev/null || :
+          cp -R ijkplayer/ijkplayer-armv7a/src/main/libs output/ 2>/dev/null || :
+          cp -R ijkplayer/ijkplayer-x86/src/main/obj/libs output/ 2>/dev/null || :
+          cp -R ijkplayer/ijkplayer-x86_64/src/main/obj/libs output/ 2>/dev/null || :
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
       with:
           name: ijkplayer
-          path: ./android/build
+          path: ./android/output
