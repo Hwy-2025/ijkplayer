@@ -29,16 +29,16 @@ jobs:
           export ANDROID_NDK=~/android-env/android-ndk-r14b
           export ANDROID_NDK_ROOT=$ANDROID_NDK
           export NDK_ROOT=$ANDROID_NDK
-          sh init-android.sh
+          ./init-android.sh
           cd extra
-          sh init-extra.sh
+          ./init-extra.sh
           cd ..
           cd android/contrib
-          sh compile-openssl.sh all
-          sh compile-libsoxr.sh all
-          sh compile-ffmpeg.sh all
+          ./compile-openssl.sh all
+          ./compile-libsoxr.sh all
+          ./compile-ffmpeg.sh all
           cd ..
-          sh compile-ijk.sh all
+          ./compile-ijk.sh all
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
