@@ -47,7 +47,7 @@ jobs:
           cp -R ijkplayer/ijkplayer-x86_64/src/main/libs/ output/ 2>/dev/null || :
 
     - name: Upload Artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
           name: ijkplayer
           path: ./android/output
